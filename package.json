@@ -11,6 +11,7 @@
     "seed:topics": "node scripts/seedTopics.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "dotenv": "^16.5.0",
     "mongodb": "^6.17.0",
     "next": "15.3.3",

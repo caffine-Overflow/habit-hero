@@ -1,28 +1,24 @@
 import NextAuth from "next-auth";
-
-const CredentialsProvider = require("next-auth/providers/credentials").default;
-
+import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
 
 export default NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "you@example.com" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         await dbConnect();
 
-        if (!credentials.email || !credentials.password) {
-          throw new Error("Email and password are required");
-        }
-
-        const normalizedEmail = credentials.email.toLowerCase().trim();
-        const user = await User.findOne({ email: normalizedEmail });
+        const user = await User.findOne({
+          email: credentials.email.toLowerCase().trim(),
+        });
 
         if (!user) {
           throw new Error("No user found with this email");
@@ -37,8 +33,9 @@ export default NextAuth({
           throw new Error("Invalid password");
         }
 
+        // Success: return user object
         return {
-          id: user._id.toString(),
+          id: user._id,
           name: user.name,
           email: user.email,
         };
@@ -48,28 +45,4 @@ export default NextAuth({
   session: {
     strategy: "jwt",
   },
-  pages: {
-    signIn: "/login",
-    error: "/login",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-        token.name = user.name;
-        token.email = user.email;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (token) {
-        session.user.id = token.id;
-        session.user.name = token.name;
-        session.user.email = token.email;
-      }
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
 });
