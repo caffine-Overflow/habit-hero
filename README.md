@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Habit Hero
 
-## Getting Started
+**Habit Hero** is an intelligent behavioral habit tracker designed to help you build lasting routines. By analyzing your behavior and suggesting small, manageable daily tasks, Habit Hero promotes long-term consistency, mindfulness, and self-discipline.
 
-First, run the development server:
+![Habit Hero Screenshots ](./public/images/screenshots)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Table of Contents
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [🧠 About](#-about)
+- [✨ Features](#-features)
+- [🚀 Demo](#-demo)
+- [📸 Screenshots](#-screenshots)
+- [🛠️ Tech Stack](#-tech-stack)
+- [🧪 Installation](#-installation)
+- [🏃 Getting Started](#-getting-started)
+- [📂 Folder Structure](#-folder-structure)
+- [🔒 Authentication](#-authentication)
+- [📈 Database Schema](#-database-schema)
+- [💡 Future Features](#-future-features)
+- [👤 Author](#-author)
+- [📝 License](#-license)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 About
 
-To learn more about Next.js, take a look at the following resources:
+> A behavioral tracker that does more than checkboxes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Habit Hero isn't just about habit tracking — it's about **habit transformation**. The system observes your pattern of behavior and assigns **personalized micro-tasks** based on your preferences, goals, and consistency. Whether you're studying, exercising, meditating, or learning a new skill — Habit Hero helps you show up daily.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🧠 **Behavioral Analysis** – Detects usage patterns
+- 📋 **Auto-generated Daily Tasks** – Small, consistent goals
+- ✅ **Progress Tracking** – Per day, per subject/topic
+- 📊 **Visual Progress Charts** – With MUI LinearProgress
+- 🔐 **Authentication** – Powered by NextAuth
+- 🌐 **RESTful API** – Custom endpoints with MongoDB
+- 📱 **Responsive UI** – Clean and mobile-ready layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🚀 Demo
+
+> 🎥 Demo video: [`public/demo-vedio/habit-hero.mp4`](./public/demo-vedio/habit-hero.mp4)
+
+---
+
+## 📸 Screenshots
+
+> Screenshots are located in `public/images/screenshots/`
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech         | Purpose                   |
+| ------------ | ------------------------- |
+| **Next.js**  | Framework for React & SSR |
+| **NextAuth** | Authentication            |
+| **MongoDB**  | Database (Mongoose ODM)   |
+| **MUI**      | UI Components & Styling   |
+| **React**    | UI Rendering              |
+|  |
